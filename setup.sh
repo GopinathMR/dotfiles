@@ -21,24 +21,37 @@ fi
 
 ya pack -a tkapias/nightfly || true
 
-git clone https://github.com/GopinathMR/dotfiles.git ~/dotfiles
+if [ ! -d "~/dotfiles" ] ; then
+    git clone https://github.com/GopinathMR/dotfiles.git ~/dotfiles
+fi
 
-git clone https://github.com/BennyOe/tokyo-night.yazi.git ~/github/BennyOe/tokyo-night.yazi 
-ln -s ~/github/BennyOe/tokyo-night.yazi ~/.config/yazi/flavors/tokyo-night.yazi
+if [ ! -d "~/github/BennyOe/tokyo-night.yazi" ] ; then
+  git clone https://github.com/BennyOe/tokyo-night.yazi.git ~/github/BennyOe/tokyo-night.yazi 
+fi
+ln -s -F ~/github/BennyOe/tokyo-night.yazi ~/.config/yazi/flavors/tokyo-night.yazi
 
-git clone https://github.com/junegunn/fzf-git.sh.git ~/fzf-git.sh
 
-git clone https://github.com/catppuccin/tmux.git ~/github/catppuccin/tmux
-ln -s ~/github/catppuccin/tmux ~/.config/tmux/plugins/catppuccin/tmux
+if [ ! -d "~/fzf-git.sh" ] ; then
+  git clone https://github.com/junegunn/fzf-git.sh.git ~/fzf-git.sh
+fi
 
-git clone https://github.com/LazyVim/starter.git ~/github/LazyVim/starter
-ln -s ~/github/LazyVim/starter ~/.config/nvim
+if [ ! -d "~/github/catpppuccin/tmux" ] ; then
+  git clone https://github.com/catppuccin/tmux.git ~/github/catppuccin/tmux
+fi
+ln -s -F ~/github/catppuccin/tmux ~/.config/tmux/plugins/catppuccin/tmux
+
+if [ ! -d "~/github/LazyVim/starter" ] ; then
+  git clone https://github.com/LazyVim/starter.git ~/github/LazyVim/starter
+fi
+ln -s -F ~/github/LazyVim/starter ~/.config/nvim
 
 # vim customizations steps
 cd ~/dotfiles
 stow --verbose home
 stow  --verbose --target ~/.config/nvim/lua/plugins nvim
 
-git clone https://github.com/josean-dev/dev-environment-files.git ~/github/josean-dev/dev-environment-files
-ln -s ~/github/josean-dev/dev-environment-files/.config/nvim/lua/josean ~/.config/nvim/lua/josean
-echo '\nrequire("josean.core")\nrequire("josean.lazy")' >> ~/.config/nvim/init.lua
+if [ ! -d "~/github/josean-dev/dev-environment-files" ] ; then
+  git clone https://github.com/josean-dev/dev-environment-files.git ~/github/josean-dev/dev-environment-files
+  ln -s -F ~/github/josean-dev/dev-environment-files/.config/nvim/lua/josean ~/.config/nvim/lua/josean
+  echo '\nrequire("josean.core")\nrequire("josean.lazy")' >> ~/.config/nvim/init.lua
+fi
