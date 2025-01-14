@@ -19,7 +19,7 @@ if [ ! -d ~/.oh-my-zsh ]; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
 
-ya pack -a tkapias/nightfly
+ya pack -a tkapias/nightfly || true
 
 git clone https://github.com/GopinathMR/dotfiles.git ~/dotfiles
 
