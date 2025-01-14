@@ -44,9 +44,9 @@ mkdir -p ~/.tpm/plugins && ln -s -F ~/github/tmux-plugins/tpm ~/.tmux/plugins/tp
 if [ ! -d "~/github/catpppuccin/tmux" ] ; then
   git clone https://github.com/catppuccin/tmux.git ~/github/catppuccin/tmux
 fi
-mkdir -p ~/config/tmux/plugins/catppuccin && ln -s -F ~/github/catppuccin/tmux ~/.config/tmux/plugins/catppuccin/tmux
+mkdir -p ~/.tmux/plugins/catppuccin && ln -s -F ~/github/catppuccin/tmux ~/.tmux/plugins/catppuccin/tmux
 
-source ~/.tpm/plugins/tpm/bin/install_plugins
+source ~/.tmux/plugins/tpm/bin/install_plugins
 
 # lazyvim setup
 if [ ! -d "~/github/LazyVim/starter" ] ; then
