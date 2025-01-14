@@ -39,12 +39,14 @@ fi
 if [ ! -d "~/github/tmux-plugins/tpm" ] ; then
   git clone https://github.com/tmux-plugins/tpm.git ~/github/tmux-plugins/tpm
 fi
-ln -s -F ~/github/tmux-plugins/tpm ~/.tmux/plugins/tpm
+mkdir -p ~/.tpm/plugins && ln -s -F ~/github/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 if [ ! -d "~/github/catpppuccin/tmux" ] ; then
   git clone https://github.com/catppuccin/tmux.git ~/github/catppuccin/tmux
 fi
-ln -s -F ~/github/catppuccin/tmux ~/.config/tmux/plugins/catppuccin/tmux
+mkdir -p ~/config/tmux/plugins/catppuccin && ln -s -F ~/github/catppuccin/tmux ~/.config/tmux/plugins/catppuccin/tmux
+
+source ~/.tpm/plugins/tpm/bin/install_plugins
 
 # lazyvim setup
 if [ ! -d "~/github/LazyVim/starter" ] ; then
