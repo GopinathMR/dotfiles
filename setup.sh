@@ -35,17 +35,24 @@ if [ ! -d "~/fzf-git.sh" ] ; then
   git clone https://github.com/junegunn/fzf-git.sh.git ~/fzf-git.sh
 fi
 
+# setup tmux plugins
+if [ ! -d "~/github/tmux-plugins/tpm" ] ; then
+  git clone https://github.com/tmux-plugins/tpm.git ~/github/tmux-plugins/tpm
+fi
+ln -s -F ~/github/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 if [ ! -d "~/github/catpppuccin/tmux" ] ; then
   git clone https://github.com/catppuccin/tmux.git ~/github/catppuccin/tmux
 fi
 ln -s -F ~/github/catppuccin/tmux ~/.config/tmux/plugins/catppuccin/tmux
 
+# lazyvim setup
 if [ ! -d "~/github/LazyVim/starter" ] ; then
   git clone https://github.com/LazyVim/starter.git ~/github/LazyVim/starter
 fi
 ln -s -F ~/github/LazyVim/starter ~/.config/nvim
 
-# vim customizations steps
+# lazy vim customizations steps
 cd ~/dotfiles
 stow --verbose home
 stow  --verbose --target ~/.config/nvim/lua/plugins nvim
