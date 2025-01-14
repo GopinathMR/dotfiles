@@ -55,3 +55,5 @@ if [ ! -d "~/github/josean-dev/dev-environment-files" ] ; then
   ln -s -F ~/github/josean-dev/dev-environment-files/.config/nvim/lua/josean ~/.config/nvim/lua/josean
   echo '\nrequire("josean.core")\nrequire("josean.lazy")' >> ~/.config/nvim/init.lua
 fi
+
+source ~/.zshrc
