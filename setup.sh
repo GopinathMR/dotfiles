@@ -15,7 +15,7 @@ brew install --cask font-jetbrains-mono
 brew install yazi ffmpegthumbnailer ffmpeg sevenzip jq poppler fd ripgrep fzf zoxide imagemagick font-symbols-only-nerd-font
 ya pack -a tkapias/nightfly
 
-git clone git@github.com:GopinathMR/dotfiles.git ~/github/dotfiles
+git clone https://github.com/GopinathMR/dotfiles.git ~/dotfiles
 
 git clone https://github.com/BennyOe/tokyo-night.yazi.git ~/github/BennyOe/tokyo-night.yazi 
 ln -s ~/github/BennyOe/tokyo-night.yazi ~/.config/yazi/flavors/tokyo-night.yazi
@@ -25,14 +25,14 @@ git clone https://github.com/junegunn/fzf-git.sh.git ~/fzf-git.sh
 git clone https://github.com/catppuccin/tmux.git ~/github/catppuccin/tmux
 ln -s ~/github/catppuccin/tmux ~/.config/tmux/plugins/catppuccin/tmux
 
-git clone git@github.com:LazyVim/starter ~/github/LazyVim/starter
+git clone https://github.com/LazyVim/starter.git ~/github/LazyVim/starter
 ln -s ~/github/LazyVim/starter ~/.config/nvim
 
 # vim customizations steps
-cd ~/github/dotfiles
+cd ~/dotfiles
 stow --verbose home
 stow  --verbose --target ~/.config/nvim/lua/plugins nvim
 
-git clone git@github.com:josean-dev/dev-environment-files.git ~/github/josean-dev/dev-environment-files
+git clone https://github.com/josean-dev/dev-environment-files.git ~/github/josean-dev/dev-environment-files
 ln -s ~/github/josean-dev/dev-environment-files/.config/nvim/lua/josean ~/.config/nvim/lua/josean
 echo '\nrequire("josean.core")\nrequire("josean.lazy")' >> ~/.config/nvim/init.lua
