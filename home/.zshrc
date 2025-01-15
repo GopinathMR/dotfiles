@@ -70,7 +70,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git aliases ssh-agent history history-substring-search gh fzf aws)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -192,3 +192,8 @@ alias tm="tmux"
 alias tml="tmux ls"
 alias tma="tmux attach-session -t"
 alias tmn="tmux new-session -s"
+
+# git aliases
+alias lg="lazygit"
+alias gs="git status"
+alias gd="git diff"
