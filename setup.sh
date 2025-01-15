@@ -51,13 +51,14 @@ source ~/.tmux/plugins/tpm/bin/install_plugins
 # lazyvim setup
 if [ ! -d "~/github/LazyVim/starter" ] ; then
   git clone https://github.com/LazyVim/starter.git ~/github/LazyVim/starter
+  cd ~/github/LazyVim/starter/lua && mv plugins old.plugins
 fi
 ln -s -F ~/github/LazyVim/starter ~/.config/nvim
 
 # lazy vim customizations steps
 cd ~/dotfiles
 stow --verbose home
-stow  --verbose --target ~/.config/nvim/lua/plugins nvim
+stow  --verbose --target ~/.config/nvim/lua/ nvim
 
 if [ ! -d "~/github/josean-dev/dev-environment-files" ] ; then
   git clone https://github.com/josean-dev/dev-environment-files.git ~/github/josean-dev/dev-environment-files
