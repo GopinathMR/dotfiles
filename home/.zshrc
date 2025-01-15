@@ -186,3 +186,9 @@ alias ll="eza -l -t modified"
 
 # Initializing zoxide for zsh shell 
 eval "$(zoxide init zsh)"
+
+# tmux aliases
+alias tm="tmux"
+alias tml="tmux ls"
+alias tma="tmux attach-session -t"
+alias tmn="tmux new-session -s"
