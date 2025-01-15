@@ -5,8 +5,19 @@ echo # (optional) move to a new line
 if [[ ! $REPLY =~ ^[Yy]$ ]]; then
   exit 1
 fi
-cd ~rm .zshrcrm .tmux.confcd ~/.config/nvim/luarm joseanrm plugins
-cd ~/.configrm nvim
+cd ~
+rm .zshrc
+rm .tmux.conf
+
+cd ~/.config/nvim/lua
+rm joseanrm plugins
+
+cd ~/.config
+rm nvim
 rm -rf ~/.tmux
-cd ~/githubrm -rf BennyOe catppuccin josean-dev LazyVim tmux-plugins
-cd ~rm -rf dotfiles
+
+cd ~/github
+rm -rf BennyOe catppuccin josean-dev LazyVim tmux-plugins junegunn
+
+cd ~
+rm -rf dotfiles

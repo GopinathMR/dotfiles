@@ -35,7 +35,7 @@ fi
 
 
 if [ ! -d "~/fzf-git.sh" ] ; then
-  git clone https://github.com/junegunn/fzf-git.sh.git ~/fzf-git.sh
+  git clone https://github.com/junegunn/fzf-git.sh.git ~/github/junegunn/fzf-git.sh
 fi
 
 # setup tmux plugins
