@@ -72,3 +72,5 @@ if [ ! -d "~/github/env-setup/dev-environment-files" ] ; then
 fi
 
 source ~/.zshrc
+
+echo "Import iTerm2 settings file from iTerm -> Settings -> Profiles -> Other Actions -> Import JSON Files -> ~/dotfiles/iterm2-profile-settings.json . Once done, make it default profile"
