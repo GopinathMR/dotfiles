@@ -6,4 +6,13 @@ Installation steps
 
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/GopinathMR/dotfiles/HEAD/setup.sh)"
+
+```
+
+To reset to default, run the script in the repository.
+
+**WARN: Please read the script before running it**
+
+```
+./reset.sh
 ```
