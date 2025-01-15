@@ -28,7 +28,10 @@ fi
 if [ ! -d "~/github/BennyOe/tokyo-night.yazi" ] ; then
   git clone https://github.com/BennyOe/tokyo-night.yazi.git ~/github/BennyOe/tokyo-night.yazi 
 fi
-ln -s -F ~/github/BennyOe/tokyo-night.yazi ~/.config/yazi/flavors/tokyo-night.yazi
+
+if [ ! -d "~/.config/yazi/flavors/tokyo-night.yazi" ] ; then
+  ln -s -F ~/github/BennyOe/tokyo-night.yazi ~/.config/yazi/flavors/tokyo-night.yazi
+fi
 
 
 if [ ! -d "~/fzf-git.sh" ] ; then
@@ -53,7 +56,9 @@ if [ ! -d "~/github/LazyVim/starter" ] ; then
   git clone https://github.com/LazyVim/starter.git ~/github/LazyVim/starter
   cd ~/github/LazyVim/starter/lua && mv plugins old.plugins
 fi
-ln -s -F ~/github/LazyVim/starter ~/.config/nvim
+if [ ! -d "~/.config/nvim" ] ; then
+  ln -s -F ~/github/LazyVim/starter ~/.config/nvim
+fi
 
 # lazy vim customizations steps
 cd ~/dotfiles
