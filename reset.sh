@@ -18,7 +18,7 @@ rm nvim
 rm -rf ~/.tmux
 
 cd ~/github
-rm -rf BennyOe catppuccin josean-dev LazyVim tmux-plugins junegunn
+rm -rf env-setup
 
 cd ~
 rm -rf dotfiles
