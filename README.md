@@ -2,10 +2,10 @@ Installation steps
 
 * Install ITerm2
 * Install brew
-* Execute below script
+* Execute below script in zsh shell
 
 ```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/GopinathMR/dotfiles/HEAD/setup.sh)"
+/bin/zsh -c "$(curl -fsSL https://raw.githubusercontent.com/GopinathMR/dotfiles/HEAD/setup.sh)"
 
 ```
 

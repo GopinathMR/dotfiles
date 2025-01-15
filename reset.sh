@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 echo "This script will reset your dotfiles"
 read -p "Are you sure? " -n 1 -r
 echo # (optional) move to a new line
@@ -10,7 +10,8 @@ rm .zshrc
 rm .tmux.conf
 
 cd ~/.config/nvim/lua
-rm joseanrm plugins
+rm josean
+rm plugins
 
 cd ~/.config
 rm nvim
