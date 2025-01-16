@@ -177,7 +177,6 @@ _fzf_comprun() {
   esac
 }
 
-alias cd="z"
 alias cat="bat"
 
 # ref: https://github.com/eza-community/eza
@@ -185,7 +184,8 @@ alias ls="eza"
 alias ll="eza -l -t modified"
 
 # Initializing zoxide for zsh shell 
-eval "$(zoxide init zsh)"
+# ref : https://www.youtube.com/watch?v=aghxkpyRVDY
+eval "$(zoxide init --cmd cd zsh)"
 
 # tmux aliases
 alias tm="tmux"
