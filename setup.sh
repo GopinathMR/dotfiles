@@ -14,6 +14,9 @@ brew install --cask font-jetbrains-mono
 
 brew install yazi ffmpegthumbnailer ffmpeg sevenzip jq poppler fd ripgrep fzf zoxide imagemagick font-symbols-only-nerd-font
 
+# install other frequent packages used for development
+brew install mycli
+
 # install oh-my-zsh if it doesn't exist
 if [ ! -d ~/.oh-my-zsh ]; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

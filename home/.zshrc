@@ -197,3 +197,7 @@ alias tmn="tmux new-session -s"
 alias lg="lazygit"
 alias gs="git status"
 alias gd="git diff"
+
+# useful alias to find a file and open in nvim
+# ref : https://www.youtube.com/shorts/K1FxGIG_lcA
+alias v=" fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
