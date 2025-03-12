@@ -208,6 +208,9 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
  export JAVA_HOME=`sdk home java 21.0.6-tem`
 
+ # hide all node warnings about punycode deprecation since node 21
+ export NODE_NO_WARNINGS=1
+
  # aicommit2 configuration
 aicommit2 config set OLLAMA.host=http://localhost:11434
 aicommit2 config set OLLAMA.model=deepseek-r1:latest

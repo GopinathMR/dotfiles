@@ -11,7 +11,7 @@ gui:
 
 # AI generated commit message using AICommit2 ref : https://github.com/jesseduffield/lazygit/issues/3212#issuecomment-2402357613
 customCommands:
-  - key: <c-a>
+  - key: <c-g>
     description: GenerateAI commit using conventional commits
     command: aicommit2
     context: files
