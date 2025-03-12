@@ -201,3 +201,9 @@ alias gd="git diff"
 # useful alias to find a file and open in nvim
 # ref : https://www.youtube.com/shorts/K1FxGIG_lcA
 alias v=" fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+ export JAVA_HOME=`sdk home java 21.0.6-tem`

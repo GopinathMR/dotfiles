@@ -17,6 +17,10 @@ brew install yazi ffmpegthumbnailer ffmpeg sevenzip jq poppler fd ripgrep fzf zo
 # install other frequent packages used for development
 brew install mycli
 
+# install sdkman to manage java versions and install latest version of stable java
+curl -s "https://get.sdkman.io" | bash
+sdk install java
+
 # install oh-my-zsh if it doesn't exist
 if [ ! -d ~/.oh-my-zsh ]; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
