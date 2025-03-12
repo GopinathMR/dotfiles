@@ -72,12 +72,19 @@ cd ~/dotfiles
 stow --verbose home
 stow  --verbose --target ~/.config/nvim/lua/ nvim
 
+mkdir -p ~/.config/lazygit
+stow  --verbose --target ~/.config/lazygit/ lazygit
+
 if [ ! -d "~/github/env-setup/dev-environment-files" ] ; then
   git clone https://github.com/josean-dev/dev-environment-files.git ~/github/env-setup/dev-environment-files
   ln -s -F ~/github/env-setup/dev-environment-files/.config/nvim/lua/josean ~/.config/nvim/lua/josean
   echo '\nrequire("josean.core")\nrequire("josean.lazy")' >> ~/.config/nvim/init.lua
 fi
 
+#install aicommit2
+npm install -g aicommit2
+
 source ~/.zshrc
 
 echo "Import iTerm2 settings file from iTerm -> Settings -> Profiles -> Other Actions -> Import JSON Files -> ~/dotfiles/iterm2-profile-settings.json . Once done, make it default profile"
+

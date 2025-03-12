@@ -207,3 +207,12 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
  export JAVA_HOME=`sdk home java 21.0.6-tem`
+
+ # aicommit2 configuration
+aicommit2 config set OLLAMA.host=http://localhost:11434
+aicommit2 config set OLLAMA.model=deepseek-r1:latest
+aicommit2 config set OLLAMA.numCtx=4096
+aicommit2 config set type="conventional"
+
+#set Lazygit config directory
+export XDG_CONFIG_HOME="$HOME/.config"
