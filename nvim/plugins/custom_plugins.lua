@@ -224,10 +224,13 @@ return {
 		},
 	},
 	{
+		"tpope/vim-surround",
+		lazy = false,
+	},
+	{
 		"folke/tokyonight.nvim",
 		lazy = false,
 		priority = 1000,
-		opts = {},
 	}, -- nvim v0.8.0
 	{
 		"kdheepak/lazygit.nvim",

@@ -17,6 +17,12 @@ brew install yazi ffmpegthumbnailer ffmpeg sevenzip jq poppler fd ripgrep fzf zo
 # install other frequent packages used for development
 brew install mycli
 
+# install ghostty terminal
+brew install --cask ghostty
+
+# install localstack
+brew install localstack/tap/localstack-cli
+
 # install sdkman to manage java versions and install latest version of stable java
 curl -s "https://get.sdkman.io" | bash
 sdk install java
@@ -74,6 +80,9 @@ stow  --verbose --target ~/.config/nvim/lua/ nvim
 
 mkdir -p ~/.config/lazygit
 stow  --verbose --target ~/.config/lazygit/ lazygit
+
+mkdir -p ~/.config/ghostty
+stow  --verbose --target ~/.config/ghostty/ ghostty
 
 if [ ! -d "~/github/env-setup/dev-environment-files" ] ; then
   git clone https://github.com/josean-dev/dev-environment-files.git ~/github/env-setup/dev-environment-files
