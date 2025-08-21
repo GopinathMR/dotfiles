@@ -25,6 +25,7 @@ brew install localstack/tap/localstack-cli
 
 # install sdkman to manage java versions and install latest version of stable java
 curl -s "https://get.sdkman.io" | bash
+source ~/.sdkman/bin/sdkman-init.sh
 sdk install java
 
 # install oh-my-zsh if it doesn't exist
