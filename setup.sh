@@ -94,7 +94,10 @@ fi
 #install aicommit2
 npm install -g aicommit2
 
+source ~/dotfiles/setup_vibe.sh
+
 source ~/.zshrc
+
 
 echo "Import iTerm2 settings file from iTerm -> Settings -> Profiles -> Other Actions -> Import JSON Files -> ~/dotfiles/iterm2-profile-settings.json . Once done, make it default profile"
 

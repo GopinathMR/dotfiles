@@ -219,3 +219,7 @@ aicommit2 config set type="conventional"
 
 #set Lazygit config directory
 export XDG_CONFIG_HOME="$HOME/.config"
+
+source ~/dotfiles/home/supabase-completion.sh
+
+alias claude="/Users/mrgopinath/.claude/local/claude"
