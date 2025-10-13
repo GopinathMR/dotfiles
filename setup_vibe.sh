@@ -26,3 +26,11 @@ then
   echo "Installing Supabase CLI"
   brew install supabase/tap/supabase
 fi
+
+# Setup ccnotify to send desktop notification when Claude needs input or completes tasks
+brew install terminal-notifier wget
+
+mkdir -p ~/.claude/ccnotify
+cd ~/.claude/ccnotify
+wget https://raw.githubusercontent.com/dazuiba/CCNotify/refs/heads/main/ccnotify.py
+chmod 755 ccnotify.py
