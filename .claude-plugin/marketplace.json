@@ -127,10 +127,11 @@
           "url": "https://mcp.linear.app/sse"
         },
         "github": {
-          "type": "stdio",
-          "command": "https://api.githubcopilot.com/mcp/",
-          "args": [],
-          "env": {}
+          "type": "http",
+          "url": "https://api.githubcopilot.com/mcp/",
+          "headers": {
+            "Authorization": "Bearer ${GITHUB_TOKEN}"
+          }
         },
         "supabase": {
           "type": "stdio",
