@@ -61,7 +61,7 @@
       ]
     },
     {
-      "name": "essential-MCPs",
+      "name": "gopi-must-haves",
       "source": "./",
       "description": "List of all essential MCPs for developer workflow",
       "version": "1.0.0",
@@ -82,6 +82,38 @@
       "strict": false,
       "commands": [],
       "agents": [],
+      "hooks": {
+        "UserPromptSubmit": [
+          {
+            "hooks": [
+              {
+                "type": "command",
+                "command": "~/.claude/ccnotify/ccnotify.py UserPromptSubmit"
+              }
+            ]
+          }
+        ],
+        "Stop": [
+          {
+            "hooks": [
+              {
+                "type": "command",
+                "command": "~/.claude/ccnotify/ccnotify.py Stop"
+              }
+            ]
+          }
+        ],
+        "Notification": [
+          {
+            "hooks": [
+              {
+                "type": "command",
+                "command": "~/.claude/ccnotify/ccnotify.py Notification"
+              }
+            ]
+          }
+        ]
+      },
       "mcpServers": {
         "context7": {
           "type": "http",
