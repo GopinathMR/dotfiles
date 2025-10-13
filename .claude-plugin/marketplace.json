@@ -31,16 +31,9 @@
       ],
       "category": "essentials",
       "strict": false,
-      "commands": [
-        "./tools/code-explain.md",
-        "./tools/smart-debug.md",
-        "./tools/doc-generate.md",
-        "./tools/pr-enhance.md",
-        "./tools/onboard.md",
-        "./workflows/git-workflow.md"
-      ],
+      "commands": [],
       "agents": [
-        "./claude/agents/protobuf-pro.md"
+        "./claude/agents/protobuf-developer-pro.md"
       ]
     },
     {
