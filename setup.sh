@@ -89,6 +89,7 @@ if [ ! -d "~/github/env-setup/dev-environment-files" ] ; then
   git clone https://github.com/josean-dev/dev-environment-files.git ~/github/env-setup/dev-environment-files
   ln -s -F ~/github/env-setup/dev-environment-files/.config/nvim/lua/josean ~/.config/nvim/lua/josean
   echo '\nrequire("josean.core")\nrequire("josean.lazy")' >> ~/.config/nvim/init.lua
+  echo '\nrequire("config.gopi")' >> ~/.config/nvim/init.lua
 fi
 
 #install aicommit2

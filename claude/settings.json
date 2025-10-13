@@ -3,5 +3,29 @@
     "type": "command",
     "command": "input=$(cat); model=$(echo \"$input\" | jq -r '.model.display_name'); printf '\\033[38;5;208m%s\\033[0m' \"$model\""
   },
+  "enabledPlugins": {
+    "claude-code-essentials@claude-code-workflows": false,
+    "api-development-kit@claude-code-workflows": true,
+    "testing-quality-suite@claude-code-workflows": true,
+    "infrastructure-devops@claude-code-workflows": true,
+    "development-utilities@claude-code-workflows": true,
+    "security-hardening@claude-code-workflows": true,
+    "code-quality-review@claude-code-workflows": true,
+    "agent-optimization@claude-code-workflows": true
+  },
+  "extraKnownMarketplaces": {
+    "claude-code-workflows": {
+      "source": {
+        "source": "github",
+        "repo": "wshobson/agents"
+      }
+    },
+    "gopi-code-workflows": {
+      "source": {
+        "source": "github",
+        "repo": "GopinathMR/dotfiles"
+      }
+    }
+  },
   "alwaysThinkingEnabled": true
 }

@@ -1,0 +1,131 @@
+{
+  "name": "gopi-code-workflows",
+  "owner": {
+    "name": "Gopinath Rangappa",
+    "email": "mr.gopinath@outlook.com",
+    "url": "https://github.com/GopinathMR/dotfiles"
+  },
+  "metadata": {
+    "description": "Production-ready workflow orchestration system with specialized agents, multi-agent workflows, and development tools - refactored into single-purpose plugins",
+    "version": "1.0.5"
+  },
+  "plugins": [
+    {
+      "name": "protobuf-essentials",
+      "source": "./",
+      "description": "Protobuf essentials using many tools provided by buf.build",
+      "version": "1.0.0",
+      "author": {
+        "name": "Gopinath Rangappa",
+        "url": "https://github.com/GopinathMR"
+      },
+      "homepage": "https://github.com/GopinathMR/dotfiles",
+      "repository": "https://github.com/GopinathMR/dotfiles",
+      "license": "MIT",
+      "keywords": [
+        "protobuf",
+        "starter",
+        "essential",
+        "gRPC",
+        "documentation"
+      ],
+      "category": "essentials",
+      "strict": false,
+      "commands": [
+        "./tools/code-explain.md",
+        "./tools/smart-debug.md",
+        "./tools/doc-generate.md",
+        "./tools/pr-enhance.md",
+        "./tools/onboard.md",
+        "./workflows/git-workflow.md"
+      ],
+      "agents": [
+        "./claude/agents/protobuf-pro.md"
+      ]
+    },
+    {
+      "name": "agent-sdk-essentials",
+      "source": "./",
+      "description": "Claude Agent SDK with understanding of A2A protocol and MCP",
+      "version": "1.0.0",
+      "author": {
+        "name": "Gopinath Rangappa",
+        "url": "https://github.com/GopinathMR"
+      },
+      "homepage": "https://github.com/GopinathMR/dotfiles",
+      "repository": "https://github.com/GopinathMR/dotfiles",
+      "license": "MIT",
+      "keywords": [
+        "a2a",
+        "mcp",
+        "agent-sdk"
+      ],
+      "category": "agents",
+      "strict": false,
+      "commands": [],
+      "agents": [
+        "./claude/agents/claude-agent-sdk-expert.md"
+      ]
+    },
+    {
+      "name": "essential-MCPs",
+      "source": "./",
+      "description": "List of all essential MCPs for developer workflow",
+      "version": "1.0.0",
+      "author": {
+        "name": "Gopinath Rangappa",
+        "url": "https://github.com/GopinathMR"
+      },
+      "homepage": "https://github.com/GopinathMR/dotfiles",
+      "repository": "https://github.com/GopinathMR/dotfiles",
+      "license": "MIT",
+      "keywords": [
+        "mcp",
+        "developer-essentials",
+        "essential",
+        "workflow"
+      ],
+      "category": "productivity",
+      "strict": false,
+      "commands": [],
+      "agents": [],
+      "mcpServers": {
+        "context7": {
+          "type": "http",
+          "url": "https://mcp.context7.com/mcp",
+          "headers": {
+            "CONTEXT7_API_KEY": "${CONTEXT7_API_KEY}"
+          }
+        },
+        "linear-server": {
+          "type": "sse",
+          "url": "https://mcp.linear.app/sse"
+        },
+        "github": {
+          "type": "stdio",
+          "command": "https://api.githubcopilot.com/mcp/",
+          "args": [],
+          "env": {}
+        },
+        "supabase": {
+          "type": "stdio",
+          "command": "npx",
+          "args": [
+            "@supabase/mcp-server-supabase@latest"
+          ],
+          "env": {}
+        },
+        "firecrawl": {
+          "type": "stdio",
+          "command": "npx",
+          "args": [
+            "firecrawl-mcp@latest"
+          ],
+          "env": {
+            "FIRECRAWL_API_KEY": "${FIRECRAWL_API_KEY}"
+          }
+        }
+      }
+    }
+  ]
+}
