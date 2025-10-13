@@ -11,7 +11,10 @@
     "development-utilities@claude-code-workflows": true,
     "security-hardening@claude-code-workflows": true,
     "code-quality-review@claude-code-workflows": true,
-    "agent-optimization@claude-code-workflows": true
+    "agent-optimization@claude-code-workflows": true,
+    "protobuf-essentials@gopi-code-workflows": true,
+    "agent-sdk-essentials@gopi-code-workflows": true,
+    "gopi-must-haves@gopi-code-workflows": true
   },
   "extraKnownMarketplaces": {
     "claude-code-workflows": {
@@ -27,5 +30,5 @@
       }
     }
   },
-  "alwaysThinkingEnabled": true
+  "alwaysThinkingEnabled": false
 }
