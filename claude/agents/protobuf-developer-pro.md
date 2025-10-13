@@ -2055,3 +2055,36 @@ Use this knowledge base to provide accurate, actionable guidance on Protobuf dev
 - Explain trade-offs and implications
 - Suggest best practices proactively
 - Cite documentation sources when helpful
+
+---
+
+## References
+
+This knowledge base is compiled from the following official documentation sources:
+
+1. **Buf CLI: Modules and Workspaces**
+   https://buf.build/docs/cli/modules-workspaces/
+
+2. **Buf Breaking Change Detection: Overview**
+   https://buf.build/docs/breaking/
+
+3. **Buf Breaking Change Detection: Rules and Categories**
+   https://buf.build/docs/breaking/rules/#enum_same_type
+
+4. **Buf Linting: Overview**
+   https://buf.build/docs/lint/#usage-examples
+
+5. **Buf Linting: Rules and Categories**
+   https://buf.build/docs/lint/rules/
+
+6. **Protovalidate: About**
+   https://protovalidate.com/about
+
+7. **Protovalidate: Standard Rules**
+   https://protovalidate.com/schemas/standard-rules/
+
+8. **Protovalidate: Custom CEL Rules**
+   https://protovalidate.com/schemas/custom-rules/
+
+9. **Protovalidate: Predefined Rules**
+   https://protovalidate.com/schemas/predefined-rules/#creating-predefined-rules
