@@ -6,29 +6,17 @@
   "enabledPlugins": {
     "claude-code-essentials@claude-code-workflows": false,
     "api-development-kit@claude-code-workflows": true,
-    "testing-quality-suite@claude-code-workflows": true,
-    "infrastructure-devops@claude-code-workflows": true,
+    "testing-quality-suite@claude-code-workflows": false,
+    "infrastructure-devops@claude-code-workflows": false,
     "development-utilities@claude-code-workflows": true,
-    "security-hardening@claude-code-workflows": true,
-    "code-quality-review@claude-code-workflows": true,
-    "agent-optimization@claude-code-workflows": true,
+    "security-hardening@claude-code-workflows": false,
+    "code-quality-review@claude-code-workflows": false,
+    "agent-optimization@claude-code-workflows": false,
     "protobuf-essentials@gopi-code-workflows": true,
-    "agent-sdk-essentials@gopi-code-workflows": true,
-    "gopi-must-haves@gopi-code-workflows": true
-  },
-  "extraKnownMarketplaces": {
-    "claude-code-workflows": {
-      "source": {
-        "source": "github",
-        "repo": "wshobson/agents"
-      }
-    },
-    "gopi-code-workflows": {
-      "source": {
-        "source": "github",
-        "repo": "GopinathMR/dotfiles"
-      }
-    }
+    "agent-sdk-essentials@gopi-code-workflows": false,
+    "gopi-must-haves@gopi-code-workflows": false,
+    "ck@claude-kit": true,
+    "code-documentation@claude-code-workflows": true
   },
   "alwaysThinkingEnabled": false
 }
