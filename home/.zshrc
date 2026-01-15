@@ -202,6 +202,9 @@ alias gd="git diff"
 # ref : https://www.youtube.com/shorts/K1FxGIG_lcA
 alias v=" fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
 
+# alias to open any file using Preview app on Mac
+alias preview="open -a Preview"
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
