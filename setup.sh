@@ -2,7 +2,7 @@
 #
 # All useful brew packages
 
-brew install gh neovim lua ripgrep sqlite3 fpp tmux stow
+brew install gh neovim lua ripgrep sqlite3 fpp tmux stow ast-grep luarocks
 
 # replace common CLI tools with newer variants
 # https://www.youtube.com/watch?v=2OHrTQVlRMg
@@ -12,7 +12,11 @@ brew install lazygit bat entr eza tree atuin
 #install Jetbrains mono font
 brew install --cask font-jetbrains-mono
 
-brew install yazi ffmpegthumbnailer ffmpeg sevenzip jq poppler fd ripgrep fzf zoxide imagemagick font-symbols-only-nerd-font
+brew install yazi ffmpegthumbnailer ffmpeg sevenzip jq poppler fd ripgrep fzf zoxide imagemagick font-symbols-only-nerd-font nvm
+
+# Setup node
+mkdir -p ~/.nvm
+nvm install --lts && nvm use --lts
 
 # install other frequent packages used for development
 brew install mycli
@@ -93,12 +97,10 @@ if [ ! -d "~/github/env-setup/dev-environment-files" ] ; then
 fi
 
 #install aicommit2
-npm install -g aicommit2
+if command -v npm >/dev/null 2>&1; then
+  npm install -g aicommit2
+fi 
 
 source ~/dotfiles/setup_vibe.sh
 
 source ~/.zshrc
-
-
-echo "Import iTerm2 settings file from iTerm -> Settings -> Profiles -> Other Actions -> Import JSON Files -> ~/dotfiles/iterm2-profile-settings.json . Once done, make it default profile"
-

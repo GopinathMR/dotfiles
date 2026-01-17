@@ -103,7 +103,10 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+if [[ -e ~/.local/bin/env ]]; then
 . "$HOME/.local/bin/env"
+fi
+
 export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
@@ -209,16 +212,19 @@ alias preview="open -a Preview"
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
- export JAVA_HOME=`sdk home java 21.0.6-tem`
+ export JAVA_HOME=`sdk home java 25.0.1-tem`
 
  # hide all node warnings about punycode deprecation since node 21
  export NODE_NO_WARNINGS=1
 
  # aicommit2 configuration
-aicommit2 config set OLLAMA.host=http://localhost:11434
-aicommit2 config set OLLAMA.model=deepseek-r1:latest
-aicommit2 config set OLLAMA.numCtx=4096
-aicommit2 config set type="conventional"
+if command -v aicommit2 >/dev/null 2>&1; then
+  aicommit2 config set OLLAMA.host=http://localhost:11434
+  aicommit2 config set OLLAMA.model=deepseek-r1:latest
+  aicommit2 config set OLLAMA.numCtx=4096
+  aicommit2 config set type="conventional"
+fi
+
 
 #set Lazygit config directory
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -226,3 +232,13 @@ export XDG_CONFIG_HOME="$HOME/.config"
 source ~/dotfiles/home/supabase-completion.sh
 
 alias claude="/Users/mrgopinath/.claude/local/claude"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/gopinath/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/gopinath/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/gopinath/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/gopinath/google-cloud-sdk/completion.zsh.inc'; fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion

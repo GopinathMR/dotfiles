@@ -5,7 +5,7 @@
 if ! command -v claude &> /dev/null
 then
   echo "Installing Claude CLI"
-  curl -fsSL https://claude.ai/install.sh | bash
+  brew install --cask claude-code
 fi
 
 cd ~/dotfiles/claude
@@ -13,7 +13,6 @@ ln -s -F ~/dotfiles/claude/settings.json ~/.claude/settings.json
 
 
 # setup all sub-agents relevant from awesome-claude-code-subagents
-
 
 # Install agent gateway
 #curl https://raw.githubusercontent.com/agentgateway/agentgateway/refs/heads/main/common/scripts/get-agentgateway | bash
