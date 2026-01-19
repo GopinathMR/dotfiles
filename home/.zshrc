@@ -231,7 +231,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 source ~/dotfiles/home/supabase-completion.sh
 
-alias claude="/Users/mrgopinath/.claude/local/claude"
+alias claude="${HOME}/.local/bin/claude"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/gopinath/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/gopinath/google-cloud-sdk/path.zsh.inc'; fi

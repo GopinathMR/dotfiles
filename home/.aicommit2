@@ -1,11 +1,6 @@
-
-# General Settings
-#logging=true
 generate=1
 temperature=1.0
-type="conventional"
-
-# Model-Specific Settings
+type=conventional
 
 [OLLAMA]
 host=http://localhost:11434
