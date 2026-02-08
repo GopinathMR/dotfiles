@@ -2,7 +2,8 @@
 #
 # All useful brew packages
 
-brew install gh neovim lua ripgrep sqlite3 fpp tmux stow ast-grep luarocks jj
+brew install gh neovim lua ripgrep sqlite3 fpp tmux stow ast-grep luarocks jj direnv
+
 
 # replace common CLI tools with newer variants
 # https://www.youtube.com/watch?v=2OHrTQVlRMg
@@ -14,12 +15,21 @@ brew install --cask font-jetbrains-mono
 
 brew install yazi ffmpegthumbnailer ffmpeg sevenzip jq poppler fd ripgrep fzf zoxide imagemagick font-symbols-only-nerd-font nvm
 
-# Setup node
+# Install node
 mkdir -p ~/.nvm
 nvm install --lts && nvm use --lts
 
-# install other frequent packages used for development
-brew install mycli
+# Install all Pyenv dependencies and Pyenv
+brew install openssl readline sqlite3 xz
+brew install pyenv uv
+
+# install sdkman to manage java versions and install latest version of stable java
+curl -s "https://get.sdkman.io" | bash
+source ~/.sdkman/bin/sdkman-init.sh
+sdk install java
+
+# install databases used for development
+brew install mycli postgresql flyway
 
 # install ghostty terminal
 brew install --cask ghostty
@@ -27,10 +37,6 @@ brew install --cask ghostty
 # install localstack
 brew install localstack/tap/localstack-cli
 
-# install sdkman to manage java versions and install latest version of stable java
-curl -s "https://get.sdkman.io" | bash
-source ~/.sdkman/bin/sdkman-init.sh
-sdk install java
 
 # install oh-my-zsh if it doesn't exist
 if [ ! -d ~/.oh-my-zsh ]; then

@@ -70,7 +70,13 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git aliases ssh-agent history history-substring-search gh fzf aws)
+#
+
+if command -v pyenv >/dev/null 2>&1; then
+  eval "$(pyenv init --path)"
+fi
+
+plugins=(git aliases ssh-agent history history-substring-search gh fzf aws gcloud pyenv pip)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -184,7 +190,7 @@ alias cat="bat"
 
 # ref: https://github.com/eza-community/eza
 alias ls="eza"
-alias ll="eza -l -t modified"
+alias ll="eza --icons=always -l -t modified"
 
 # Initializing zoxide for zsh shell 
 # ref : https://www.youtube.com/watch?v=aghxkpyRVDY
@@ -234,13 +240,27 @@ source ~/dotfiles/home/supabase-completion.sh
 alias claude="${HOME}/.local/bin/claude"
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/gopinath/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/gopinath/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '${HOME}/google-cloud-sdk/path.zsh.inc' ]; then . '${HOME}/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/gopinath/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/gopinath/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '${HOME}/google-cloud-sdk/completion.zsh.inc' ]; then . '${HOME}/google-cloud-sdk/completion.zsh.inc'; fi
+
+#direnv 
+if command -v direnv >/dev/null 2>&1; then
+  eval "$(direnv hook zsh)"
+fi
+
+#Make python3 as alias for python
+if command -v python3 >/dev/null 2>&1; then
+  alias python="python3"
+fi
+
+if command -v pip3 >/dev/null 2>&1; then
+  alias pip="pip3"
+fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
-export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/Library/Python/3.14/lib/python/site-packages:$PATH
