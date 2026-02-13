@@ -87,7 +87,7 @@ fi
 # lazy vim customizations steps
 cd ~/dotfiles
 stow --verbose home
-stow  --verbose --target ~/.config/nvim/lua/ nvim
+stow  --verbose --target ~/.config/nvim/lua/plugins nvim/plugins
 
 mkdir -p ~/.config/lazygit
 stow  --verbose --target ~/.config/lazygit/ lazygit
@@ -95,12 +95,12 @@ stow  --verbose --target ~/.config/lazygit/ lazygit
 mkdir -p ~/.config/ghostty
 stow  --verbose --target ~/.config/ghostty/ ghostty
 
-if [ ! -d "~/github/env-setup/dev-environment-files" ] ; then
-  git clone https://github.com/josean-dev/dev-environment-files.git ~/github/env-setup/dev-environment-files
-  ln -s -F ~/github/env-setup/dev-environment-files/.config/nvim/lua/josean ~/.config/nvim/lua/josean
-  echo '\nrequire("josean.core")\nrequire("josean.lazy")' >> ~/.config/nvim/init.lua
-  echo '\nrequire("config.gopi")' >> ~/.config/nvim/init.lua
-fi
+#if [ ! -d "~/github/env-setup/dev-environment-files" ] ; then
+#  git clone https://github.com/josean-dev/dev-environment-files.git ~/github/env-setup/dev-environment-files
+#  ln -s -F ~/github/env-setup/dev-environment-files/.config/nvim/lua/josean ~/.config/nvim/lua/josean
+#  echo '\nrequire("josean.core")\nrequire("josean.lazy")' >> ~/.config/nvim/init.lua
+#  echo '\nrequire("config.gopi")' >> ~/.config/nvim/init.lua
+#fi
 
 #install aicommit2
 if command -v npm >/dev/null 2>&1; then
