@@ -189,7 +189,6 @@ _fzf_comprun() {
 alias cat="bat"
 
 # ref: https://github.com/eza-community/eza
-alias ls="eza"
 alias ll="eza --icons=always -l -t modified"
 
 # Initializing zoxide for zsh shell 
@@ -237,7 +236,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 source ~/dotfiles/home/supabase-completion.sh
 
-alias claude="${HOME}/.local/bin/claude"
+alias claude="${HOME}/.claude/local/claude"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '${HOME}/google-cloud-sdk/path.zsh.inc' ]; then . '${HOME}/google-cloud-sdk/path.zsh.inc'; fi
