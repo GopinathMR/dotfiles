@@ -88,6 +88,7 @@ fi
 cd ~/dotfiles
 stow --verbose home
 stow  --verbose --target ~/.config/nvim/lua/plugins nvim/plugins
+stow  --verbose --target ~/.config/nvim nvim
 
 mkdir -p ~/.config/lazygit
 stow  --verbose --target ~/.config/lazygit/ lazygit
