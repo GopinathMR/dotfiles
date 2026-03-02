@@ -1,6 +1,6 @@
 type=conventional
 
 [OLLAMA]
+host=http://localhost:11434
 model[]=deepseek-r1:latest
 numCtx=4096
-host=http://localhost:11434

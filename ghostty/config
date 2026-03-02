@@ -1,2 +1,4 @@
 theme = Dracula
 keybind = shift+enter=text:\x1b\r
+shell-integration-features = no-title
+desktop-notifications = true

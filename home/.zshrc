@@ -38,7 +38,7 @@ ZSH_THEME="robbyrussell"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
@@ -64,6 +64,10 @@ ZSH_THEME="robbyrussell"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Let tmux control the window title when inside tmux (Oh My Zsh would otherwise
+# overwrite it on every prompt with e.g. username).
+[[ -n "$TMUX" ]] && DISABLE_AUTO_TITLE="true"
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
@@ -189,6 +193,7 @@ _fzf_comprun() {
 alias cat="bat"
 
 # ref: https://github.com/eza-community/eza
+alias ls="eza --icons=always --grid --group-directories-first"
 alias ll="eza --icons=always -l -t modified"
 
 # Initializing zoxide for zsh shell 
@@ -200,6 +205,10 @@ alias tm="tmux"
 alias tml="tmux ls"
 alias tma="tmux attach-session -t"
 alias tmn="tmux new-session -s"
+alias tsp="tmux select-pane -T"
+
+# duplicate existing session into another window, so you can reuse same panes
+alias tmd="tmux new-session -t"
 
 # git aliases
 alias lg="lazygit"
@@ -263,3 +272,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 export PATH=$HOME/.local/bin:$HOME/Library/Python/3.14/lib/python/site-packages:$PATH
+
+if [ -f '${HOME}/.cargo/env' ]; then source '${HOME}/.cargo/env'; fi
+export ENABLE_LSP_TOOLS=1
+

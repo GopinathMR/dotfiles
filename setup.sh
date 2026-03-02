@@ -19,9 +19,10 @@ brew install yazi ffmpegthumbnailer ffmpeg sevenzip jq poppler fd ripgrep fzf zo
 mkdir -p ~/.nvm
 nvm install --lts && nvm use --lts
 
-# Install all Pyenv dependencies and Pyenv
+# Install python tools and  dependencies
 brew install openssl readline sqlite3 xz
-brew install pyenv uv
+brew install pyenv
+brew install ruff uv ty
 
 # install sdkman to manage java versions and install latest version of stable java
 curl -s "https://get.sdkman.io" | bash
@@ -61,6 +62,9 @@ fi
 if [ ! -d "~/github/env-setup/fzf-git.sh" ] ; then
   git clone https://github.com/junegunn/fzf-git.sh.git ~/github/env-setup/fzf-git.sh
 fi
+
+# install kitty to show images on tmux terminals
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh
 
 # setup tmux plugins
 if [ ! -d "~/github/env-setup/tpm" ] ; then
@@ -107,6 +111,23 @@ stow  --verbose --target ~/.config/ghostty/ ghostty
 if command -v npm >/dev/null 2>&1; then
   npm install -g aicommit2
 fi 
+
+# Install Rust and related components.
+brew install rustup
+rustup default stable
+rustup-init
+brew install rust-analyzer
+rustup component add rust-src
+brew install git-lfs
+
+# markdown preview in terminal
+brew install glow
+
+# browse list of installed brew packages
+brew install taproom
+
+# Install terminal based presentation tool
+brew install presenterm
 
 source ~/dotfiles/setup_vibe.sh
 
