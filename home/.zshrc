@@ -245,7 +245,10 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 source ~/dotfiles/home/supabase-completion.sh
 
+export CLAUDE_CODE_NO_FLICKER=1
 alias claude="${HOME}/.local/bin/claude"
+alias claudes="claude --enable-auto-mode"
+alias clauded="claude --dangerously-skip-permissions"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '${HOME}/google-cloud-sdk/path.zsh.inc' ]; then . '${HOME}/google-cloud-sdk/path.zsh.inc'; fi
@@ -276,3 +279,4 @@ export PATH=$HOME/.local/bin:$HOME/Library/Python/3.14/lib/python/site-packages:
 if [ -f '${HOME}/.cargo/env' ]; then source '${HOME}/.cargo/env'; fi
 export ENABLE_LSP_TOOLS=1
 
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"

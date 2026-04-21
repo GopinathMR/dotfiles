@@ -8,7 +8,7 @@ brew install gh neovim lua ripgrep sqlite3 fpp tmux stow ast-grep luarocks jj di
 # replace common CLI tools with newer variants
 # https://www.youtube.com/watch?v=2OHrTQVlRMg
 # bat is replacement for cat - https://www.youtube.com/watch?v=mmqDYw9C30I
-brew install lazygit bat entr eza tree atuin
+brew install lazygit bat entr eza tree atuin git-diff
 
 #install Jetbrains mono font
 brew install --cask font-jetbrains-mono
@@ -18,6 +18,10 @@ brew install yazi ffmpegthumbnailer ffmpeg sevenzip jq poppler fd ripgrep fzf zo
 # Install node
 mkdir -p ~/.nvm
 nvm install --lts && nvm use --lts
+brew install pnpm
+brew tap oven-sh/bun
+brew install bun
+
 
 # Install python tools and  dependencies
 brew install openssl readline sqlite3 xz
@@ -121,7 +125,7 @@ rustup component add rust-src
 brew install git-lfs
 
 # markdown preview in terminal
-brew install glow
+brew install glow pandoc
 
 # browse list of installed brew packages
 brew install taproom
@@ -129,6 +133,11 @@ brew install taproom
 # Install terminal based presentation tool
 brew install presenterm
 
+ya pkg add yazi-rs/plugins:piper
+ya pkg add yazi-rs/plugins:smart-filter
+
+
 source ~/dotfiles/setup_vibe.sh
 
 source ~/.zshrc
+
