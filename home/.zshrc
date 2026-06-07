@@ -248,7 +248,10 @@ source ~/dotfiles/home/supabase-completion.sh
 export CLAUDE_CODE_NO_FLICKER=1
 alias claude="${HOME}/.local/bin/claude"
 alias claudes="claude --enable-auto-mode"
-alias clauded="claude --dangerously-skip-permissions"
+alias clauded="claude --dangerously-skip-permissions --remote-control "
+USE_BUILTIN_RIPGREP=1
+alias codexd="codex --dangerously-bypass-approvals-and-sandbox"
+alias geminid="gemini --yolo"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '${HOME}/google-cloud-sdk/path.zsh.inc' ]; then . '${HOME}/google-cloud-sdk/path.zsh.inc'; fi
@@ -280,3 +283,5 @@ if [ -f '${HOME}/.cargo/env' ]; then source '${HOME}/.cargo/env'; fi
 export ENABLE_LSP_TOOLS=1
 
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+ source <(~/.local/bin/sol completion zsh)

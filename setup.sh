@@ -138,6 +138,7 @@ ya pkg add yazi-rs/plugins:smart-filter
 
 # Setup AI tools
 brew install coleam00/archon/archon
+brew install rtk pre-commit
 
 
 source ~/dotfiles/setup_vibe.sh

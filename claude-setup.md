@@ -61,6 +61,11 @@ Add each marketplace source:
 \claude plugin install voltagent-biz
 \claude plugin install voltagent-meta
 \claude plugin install voltagent-research
+
+### 5. Install Plugins from `boostvolt/claude-code-lsps/`
+
+```bash
+\claude plugin install rust-analyzer
 ```
 
 ### 5. Install `rust-skills` (Non-Standard Plugin via Git Clone)
