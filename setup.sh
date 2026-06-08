@@ -127,6 +127,9 @@ brew install git-lfs
 # markdown preview in terminal
 brew install glow pandoc
 
+# install infra related components
+brew install trivy
+
 # browse list of installed brew packages
 brew install taproom
 

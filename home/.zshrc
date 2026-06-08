@@ -244,14 +244,17 @@ fi
 export XDG_CONFIG_HOME="$HOME/.config"
 
 source ~/dotfiles/home/supabase-completion.sh
+export PATH=$HOME/.local/bin:$HOME/Library/Python/3.14/lib/python/site-packages:$HOME/.bun/bin:$PATH
 
 export CLAUDE_CODE_NO_FLICKER=1
 alias claude="${HOME}/.local/bin/claude"
-alias claudes="claude --enable-auto-mode"
-alias clauded="claude --dangerously-skip-permissions --remote-control "
+
 USE_BUILTIN_RIPGREP=1
 alias codexd="codex --dangerously-bypass-approvals-and-sandbox"
 alias geminid="gemini --yolo"
+alias clauded="claude --dangerously-skip-permissions --remote-control --name '`sol print workspace-name`-`basename $PWD`'
+source <(~/.local/bin/sol completion zsh)
+
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '${HOME}/google-cloud-sdk/path.zsh.inc' ]; then . '${HOME}/google-cloud-sdk/path.zsh.inc'; fi
@@ -277,11 +280,11 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
-export PATH=$HOME/.local/bin:$HOME/Library/Python/3.14/lib/python/site-packages:$PATH
 
 if [ -f '${HOME}/.cargo/env' ]; then source '${HOME}/.cargo/env'; fi
 export ENABLE_LSP_TOOLS=1
 
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
- source <(~/.local/bin/sol completion zsh)
+# moving tmux's storage path into your private home directory where macOS isn't allowed to touch
+export TMUX_TMPDIR=~/.tmux/tmp
