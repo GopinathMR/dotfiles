@@ -1,8 +1,13 @@
 {
   "env": {
-    "USE_BUILTIN_RIPGREP": "1"
+    "USE_BUILTIN_RIPGREP": "0"
   },
-  "model": "opus[1m]",
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Bash(rtk *)"
+    ]
+  },
   "enableAllProjectMcpServers": true,
   "hooks": {
     "Stop": [
@@ -26,6 +31,17 @@
           {
             "type": "command",
             "command": "if claude plugin list --installed | grep -q 'git-pr-workflows'; then echo '✅ Plugin git-pr-workflows is active.'; else echo '⚠️ Warning: Plugin xyz not found or disabled. Run /plugin to install.'; fi"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "rtk hook claude"
           }
         ]
       }
@@ -79,7 +95,9 @@
     "jetty-java@jetty": true,
     "example-skills@anthropic-agent-skills": true,
     "n8n-mcp-skills@n8n-mcp-skills": true,
-    "caveman@caveman": true
+    "caveman@caveman": true,
+    "vercel@claude-plugins-official": true,
+    "frontend-design@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "jetty": {
@@ -121,6 +139,12 @@
       "source": {
         "source": "github",
         "repo": "JuliusBrussee/caveman"
+      }
+    },
+    "claude-plugins-official": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/claude-plugins-official"
       }
     }
   },

@@ -252,7 +252,7 @@ alias claude="${HOME}/.local/bin/claude"
 USE_BUILTIN_RIPGREP=1
 alias codexd="codex --dangerously-bypass-approvals-and-sandbox"
 alias geminid="gemini --yolo"
-alias clauded="claude --dangerously-skip-permissions --remote-control --name '`sol print workspace-name`-`basename $PWD`'"
+alias clauded="claude --dangerously-skip-permissions --remote-control --name $(sol print workspace-name)"
 source <(~/.local/bin/sol completion zsh)
 
 
