@@ -5,7 +5,8 @@
   "permissions": {
     "allow": [
       "WebSearch",
-      "Bash(rtk *)"
+      "Bash(rtk *)",
+      "Bash(sol *)"
     ]
   },
   "enableAllProjectMcpServers": true,
