@@ -297,6 +297,6 @@ else
 fi
 
 if [[ -n $COMPANY_NAME ]]; then
-  if [ -f "${HOME}/zshrc_${COMPANY_NAME}" ]; then source "${HOME}/zshrc_${COMPANY_NAME}"; fi
+  if [ -f "${HOME}/.zshrc_${COMPANY_NAME}" ]; then source "${HOME}/.zshrc_${COMPANY_NAME}"; fi
 fi
 
