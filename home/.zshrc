@@ -252,7 +252,7 @@ alias claude="${HOME}/.local/bin/claude"
 USE_BUILTIN_RIPGREP=1
 alias codexd="codex --dangerously-bypass-approvals-and-sandbox"
 alias geminid="gemini --yolo"
-alias clauded="claude --dangerously-skip-permissions --remote-control --name $(sol print workspace-name)"
+alias clauded="claude --enable-auto-mode --dangerously-skip-permissions --remote-control --name $(sol print workspace-name)"
 source <(~/.local/bin/sol completion zsh)
 
 
@@ -288,3 +288,15 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/b
 
 # moving tmux's storage path into your private home directory where macOS isn't allowed to touch
 export TMUX_TMPDIR=~/.tmux/tmp
+
+# create a section which allows you to have company specific zshrc script which is sourced at the end.
+if [ -f "$HOME/.company" ]; then 
+  export COMPANY_NAME=$(cat $HOME/.company)
+else
+  echo "create a file $HOME/.company with name of the company and create company specific zshrc file in $HOME/zshrc_<companyName>"
+fi
+
+if [[ -n $COMPANY_NAME ]]; then
+  if [ -f "${HOME}/zshrc_${COMPANY_NAME}" ]; then source "${HOME}/zshrc_${COMPANY_NAME}"; fi
+fi
+
