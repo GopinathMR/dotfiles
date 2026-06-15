@@ -1,4 +1,25 @@
--- custom setup by Gopi --
+-- disable the annoying markdown lint error MD013 which gives error if markdown exceeds 80 characters length
+local lint = require("lint")
+
+-- For markdownlint-cli2 (LazyVim default)
+lint.linters["markdownlint-cli2"].args = {
+  "--config",
+  '{"config":{"MD013":false}}',
+}
+
+-- For standard markdownlint (if used instead)
+lint.linters.markdownlint.args = {
+  "--disable",
+  "MD013",
+}
+
+-- Keybindings
+vim.keymap.set("n", "<F2>", "<cmd>w<cr>", { desc = "Save file" })
+vim.keymap.set("i", "<F2>", "<cmd>w<cr>", { desc = "Save file" })
+vim.keymap.set("n", "<F6>", "<cmd>split<cr>", { desc = "Horizontal split" })
+vim.keymap.set("n", "<F18>", "<cmd>vsplit<cr>", { desc = "Vertical split" })
+vim.keymap.set("n", "q", "<cmd>quit<cr>", { desc = "quit current pane" })
+
 return {
   {
     "christoomey/vim-tmux-navigator",
@@ -19,83 +40,22 @@ return {
     },
   },
   {
-    "kdheepak/lazygit.nvim",
-    lazy = true,
-    cmd = {
-      "LazyGit",
-      "LazyGitConfig",
-      "LazyGitCurrentFile",
-      "LazyGitFilter",
-      "LazyGitFilterCurrentFile",
-    },
-    -- optional for floating window border decoration
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
-    -- setting the keybinding for LazyGit with 'keys' is recommended in
-    -- order to load the plugin when the command is run for the first time
-    keys = {
-      { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
-    },
-  },
-  {
-    "hedyhli/outline.nvim",
-    lazy = true,
-    cmd = { "Outline", "OutlineOpen" },
-    keys = { -- Example mapping to toggle outline
-      { "<leader>oo", "<cmd>Outline<CR>", desc = "Toggle outline" },
-      { "<leader>of", "<cmd>OutlineFocus<CR>", desc = "outline Focus" },
-    },
+    "folke/tokyonight.nvim",
     opts = {
-      -- Your setup opts here
+      on_highlights = function(hl, _)
+        hl.WinSeparator = { fg = "#ff8800", bg = "NONE" }
+      end,
     },
-  },
-  {
-    "folke/flash.nvim",
-    event = "VeryLazy",
-    ---@type Flash.Config
-    opts = {},
-    keys = {
-      {
-        "s",
-        mode = { "n", "x", "o" },
-        function()
-          require("flash").jump()
-        end,
-        desc = "Flash",
-      },
-      {
-        "S",
-        mode = { "n", "x", "o" },
-        function()
-          require("flash").treesitter()
-        end,
-        desc = "Flash Treesitter",
-      },
-      {
-        "r",
-        mode = "o",
-        function()
-          require("flash").remote()
-        end,
-        desc = "Remote Flash",
-      },
-      {
-        "R",
-        mode = { "o", "x" },
-        function()
-          require("flash").treesitter_search()
-        end,
-        desc = "Treesitter Search",
-      },
-      {
-        "<c-s>",
-        mode = { "c" },
-        function()
-          require("flash").toggle()
-        end,
-        desc = "Toggle Flash Search",
-      },
-    },
+    init = function()
+      vim.opt.fillchars:append({
+        vert = "▏",
+        horiz = "▁",
+        horizup = "▏",
+        horizdown = "▏",
+        vertleft = "▁",
+        vertright = "▁",
+        verthoriz = "▁",
+      })
+    end,
   },
 }

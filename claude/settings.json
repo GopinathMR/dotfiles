@@ -98,7 +98,8 @@
     "n8n-mcp-skills@n8n-mcp-skills": true,
     "caveman@caveman": true,
     "vercel@claude-plugins-official": true,
-    "frontend-design@claude-plugins-official": true
+    "frontend-design@claude-plugins-official": true,
+    "lattice@lattice": true
   },
   "extraKnownMarketplaces": {
     "jetty": {
@@ -146,6 +147,12 @@
       "source": {
         "source": "github",
         "repo": "anthropics/claude-plugins-official"
+      }
+    },
+    "lattice": {
+      "source": {
+        "source": "github",
+        "repo": "techygarg/lattice"
       }
     }
   },
