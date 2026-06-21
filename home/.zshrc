@@ -196,9 +196,13 @@ alias cat="bat"
 alias ls="eza --icons=always --grid --group-directories-first"
 alias ll="eza --icons=always -l -t modified"
 
-# Initializing zoxide for zsh shell 
+# Initializing zoxide for zsh shell
 # ref : https://www.youtube.com/watch?v=aghxkpyRVDY
-eval "$(zoxide init --cmd cd zsh)"
+# NOTE: do NOT use --cmd cd. Overriding cd makes `cd <name>` frecency-jump to
+# whatever zoxide ranks highest (e.g. a different worktree), which breaks scripts
+# and agents that rely on literal relative cd. Jump with `z <name>`, pick with `zi`.
+export _ZO_DOCTOR=0          # silence the init-placement warning
+eval "$(zoxide init zsh)"
 
 # tmux aliases
 alias tm="tmux"
