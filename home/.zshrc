@@ -235,6 +235,8 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
  export JAVA_HOME=`sdk home java 25.0.1-tem`
 
+ export GOPATH=~/.local/bin
+
 # install terraform auto-complete
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
@@ -296,6 +298,8 @@ if [ -f '${HOME}/.cargo/env' ]; then source '${HOME}/.cargo/env'; fi
 export ENABLE_LSP_TOOLS=1
 
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+~/dotfiles/home/set-tmux-pane-title.sh
 
 # create a section which allows you to have company specific zshrc script which is sourced at the end.
 if [ -f "$HOME/.company" ]; then 
