@@ -214,6 +214,9 @@ alias tsp="tmux select-pane -T"
 # duplicate existing session into another window, so you can reuse same panes
 alias tmd="tmux new-session -t"
 
+# moving tmux's storage path into your private home directory where macOS isn't allowed to touch
+export TMUX_TMPDIR=~/.tmux/tmp
+
 # git aliases
 alias lg="lazygit"
 alias gs="git status"
@@ -231,6 +234,10 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
  export JAVA_HOME=`sdk home java 25.0.1-tem`
+
+# install terraform auto-complete
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
  # hide all node warnings about punycode deprecation since node 21
  export NODE_NO_WARNINGS=1
@@ -290,9 +297,6 @@ export ENABLE_LSP_TOOLS=1
 
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
-# moving tmux's storage path into your private home directory where macOS isn't allowed to touch
-export TMUX_TMPDIR=~/.tmux/tmp
-
 # create a section which allows you to have company specific zshrc script which is sourced at the end.
 if [ -f "$HOME/.company" ]; then 
   export COMPANY_NAME=$(cat $HOME/.company)
@@ -303,4 +307,3 @@ fi
 if [[ -n $COMPANY_NAME ]]; then
   if [ -f "${HOME}/.zshrc_${COMPANY_NAME}" ]; then source "${HOME}/.zshrc_${COMPANY_NAME}"; fi
 fi
-
