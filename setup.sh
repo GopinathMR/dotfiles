@@ -143,6 +143,10 @@ ya pkg add yazi-rs/plugins:smart-filter
 brew install coleam00/archon/archon
 brew install rtk pre-commit
 
+# swift related tooling
+brew install mise
+
+
 
 source ~/dotfiles/setup_vibe.sh
 
