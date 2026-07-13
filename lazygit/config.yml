@@ -2,10 +2,39 @@
 gui:
   # Config relating to colors and styles.
   # See https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#color-attributes
+  #  theme:
+  #    # Color of keybindings help text in the bottom line
+  #    optionsTextColor:
+  #      - cyan
+  # lavender theme ref : https://github.com/catppuccin/lazygit/blob/main/themes/macchiato/lavender.yml
   theme:
-    # Color of keybindings help text in the bottom line
+    activeBorderColor:
+      - "#b7bdf8"
+      - bold
+    inactiveBorderColor:
+      - "#a5adcb"
+    searchingActiveBorderColor:
+      - "#eed49f"
     optionsTextColor:
-      - cyan
+      - "#8aadf4"
+    selectedLineBgColor:
+      - "#363a4f"
+    inactiveViewSelectedLineBgColor:
+      - "#6e738d"
+    cherryPickedCommitFgColor:
+      - "#b7bdf8"
+    cherryPickedCommitBgColor:
+      - "#494d64"
+    markedBaseCommitFgColor:
+      - "#8aadf4"
+    markedBaseCommitBgColor:
+      - "#eed49f"
+    unstagedChangesColor:
+      - "#ed8796"
+    defaultFgColor:
+      - "#cad3f5"
+  authorColors:
+    "*": "#b7bdf8"
 # AI generated commit message using AICommit2 ref : https://github.com/jesseduffield/lazygit/issues/3212#issuecomment-2402357613
 customCommands:
   - key: <c-g>

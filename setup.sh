@@ -2,7 +2,7 @@
 #
 # All useful brew packages
 
-brew install gh neovim lua ripgrep sqlite3 fpp tmux stow ast-grep luarocks jj direnv
+brew install gh neovim lua ripgrep sqlite3 fpp tmux stow ast-grep luarocks jj direnv hunk
 
 
 # replace common CLI tools with newer variants

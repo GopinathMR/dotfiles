@@ -7,8 +7,11 @@
       "WebSearch",
       "Bash(rtk *)",
       "Bash(sol *)"
-    ]
+    ],
+    "defaultMode": "auto",
+    "disableBypassPermissionsMode": "disable"
   },
+  "model": "opus",
   "enableAllProjectMcpServers": true,
   "hooks": {
     "Stop": [
