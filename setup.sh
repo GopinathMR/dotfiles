@@ -2,13 +2,13 @@
 #
 # All useful brew packages
 
-brew install gh neovim lua ripgrep sqlite3 fpp tmux stow ast-grep luarocks jj direnv hunk
+brew install gh neovim lua ripgrep sqlite3 fpp tmux stow ast-grep luarocks jj direnv hunk reattach-to-user-namespace
 
 
 # replace common CLI tools with newer variants
 # https://www.youtube.com/watch?v=2OHrTQVlRMg
 # bat is replacement for cat - https://www.youtube.com/watch?v=mmqDYw9C30I
-brew install lazygit bat entr eza tree atuin git-diff
+brew install lazygit bat entr eza tree atuin git-diff git-delta
 
 #install Jetbrains mono font
 brew install --cask font-jetbrains-mono
