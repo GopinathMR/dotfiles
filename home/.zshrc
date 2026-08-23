@@ -268,8 +268,6 @@ alias geminid="gemini --yolo"
 alias clauded="claude --permission-mode auto --model opus --remote-control --name $(basename $PWD)-$(sol print workspace-name)"
 export CLAUDE_CODE_DISABLE_TERMINAL_TITLE=1
 source <(~/.local/bin/sol completion zsh)
-alias hd="hunk diff"
-alias hdw="hunk diff --watch"
 export RTK_HOOK_AUDIT=1
 
 # hunk related alias
