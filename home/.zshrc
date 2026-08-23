@@ -267,6 +267,9 @@ alias codexd="codex --dangerously-bypass-approvals-and-sandbox"
 alias geminid="gemini --yolo"
 alias clauded="claude --permission-mode auto --model opus --remote-control --name $(basename $PWD)-$(sol print workspace-name)"
 source <(~/.local/bin/sol completion zsh)
+alias hd="hunk diff"
+alias hdw="hunk diff --watch"
+export RTK_HOOK_AUDIT=1
 
 
 # The next line updates PATH for the Google Cloud SDK.
